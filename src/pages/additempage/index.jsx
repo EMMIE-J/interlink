@@ -1,21 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
-  return (
-    <header className="bg-blue-600 text-white p-4 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold">INTERLINK</div>
-        <nav className="space-x-4">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/add-item" className="hover:underline">Add Item</Link>
-          <Link to="/contact" className="hover:underline">Contact</Link>
-        </nav>
-      </div>
-    </header>
-  );
-};
-
 const AddItemPage = ({ onAddItem }) => {
   const [itemName, setItemName] = useState('');
   const [description, setDescription] = useState('');
@@ -34,7 +19,6 @@ const AddItemPage = ({ onAddItem }) => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <div className="flex-grow container mx-auto p-8">
         <h2 className="text-3xl font-bold text-gray-800 mb-8">Add New Item</h2>
         <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto">
@@ -89,4 +73,4 @@ const AddItemPage = ({ onAddItem }) => {
   );
 };
 
-export default AddItemPage;
+export default AddItemPage;
